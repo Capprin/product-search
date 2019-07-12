@@ -7,5 +7,5 @@ a{text-decoration:none;color:#009900;}
 a:visited{color:#009900;}
 a:hover{text-decoration:underline;}
 .button{-webkit-appearance:none;height:40px;border-radius:10px;background-color:#ecffe5;}
-.footnote{font-size:small;float:right;bottom:0px;}
+.footnote{position:relative;font-size:small;float:right;bottom:5px;}
 .box{border:1px dotted grey;border-radius:15px;padding:15px;width:fit-content;vertical-align:top;}
