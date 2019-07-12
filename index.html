@@ -1,0 +1,81 @@
+<!--
+  Frontend for Product Web Service for easy querying
+
+  Provided by Capprin Bass 
+-->
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Product Query Service</title>
+  </head>
+
+  <body>
+    <h1>Product Query Service</h1>
+    <p>This site allows for product-centric querying of ComCat using product, spatial and temporal parameters. 
+      Visit the <a href="http://localhost:9060/product.php" target="_blank">documentation</a> for more information.</p>
+
+    <form action="http://localhost:9060/product.php" method="get" id="query_form">
+      <fieldset id="product_info">
+        <legend>Product Information</legend>
+
+        Source:
+        <input type="text" name="source"><br>
+
+        Type:
+        <input type="text" name="type"><br>
+
+        Code:
+        <input type="text" name="code"><br>
+        
+        <br>
+        Update Time:
+        <input type="text" name="updatetime"><br>
+
+        <br>
+        Update Time (Range):<br>
+        Lower Bound: <input type="text" name="minupdatetime"><br>
+        Upper Bound: <input type="text" name="maxupdatetime"><br>
+      </fieldset>
+
+      <fieldset id="spatial_info">
+        <legend>Spatial Information</legend>
+
+        Latitude (-90,90):
+        <input type="number" name="latitude" min="-90" max="90"><br>
+
+        Longitude (-180,180):
+        <input type="number" name="longitude" min="-180" max="180"><br>
+
+        <br>
+        Latitude (Range):<br>
+        Lower Bound: <input type="number" name="minlatitude" min="-90" max="90"><br>
+        Upper Bound: <input type="number" name="maxlatitude" min="-90" max="90"><br>
+
+        <br>
+        Longitude (Range):<br>
+        Lower Bound: <input type="number" name="minlongitude" min="-360" max="360"><br>
+        Upper Bound: <input type="number" name="maxlongitude" min="-360" max="360"><br>
+
+      </fieldset>
+
+      <fieldset id="temporal_info">
+        <legend>Temporal Information</legend>
+
+        Time:
+        <input type="date" name="time"><br>
+
+        <br>
+        Time (Range):<br>
+        Lower Bound: <input type="date" name="starttime"><br>
+        Upper Bound: <input type="date" name="endtime"><br>
+      </fieldset>
+
+      <input class="button" type="submit" value="Execute Query">
+    </form>
+
+  </body>
+
+</html>

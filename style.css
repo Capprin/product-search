@@ -1,0 +1,8 @@
+body{font-family:"Merriweather",Times,serif;color:#333333;}
+form{line-height:1.5;}
+fieldset{margin-top:10px;margin-bottom:10px;border-radius:15px;}
+fieldset legend{font-size:large;}
+a{text-decoration:none;color:#009900;}
+a:visited{color:#009900;}
+a:hover{text-decoration:underline;}
+.button{-webkit-appearance:none;height:40px;border-radius:10px;background-color:#e6ffe6;}
