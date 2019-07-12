@@ -14,7 +14,7 @@
 
   <body>
     <h1>Product Query Service</h1>
-    <p>This site allows for product-centric querying of ComCat using product, spatial and temporal parameters. 
+    <p>This service allows for product-centric querying of ComCat using product, spatial and temporal parameters. 
       Visit the <a href="http://localhost:9060/product.php" target="_blank">documentation</a> for more information.</p>
 
     <form action="http://localhost:9060/product.php" method="get" id="query_form">
@@ -22,7 +22,7 @@
         <legend>Product Information</legend>
 
         Source:
-        <input type="text" name="source"><br>
+        <input type="text" name="source" size="2"><br>
 
         Type:
         <input type="text" name="type"><br>
@@ -33,31 +33,37 @@
         <br>
         Update Time:
         <input type="text" name="updatetime"><br>
+        OR<br>
+        <div class="box">
+          Update Time (Range):<br>
+          Lower Bound: <input type="text" name="minupdatetime"><br>
+          Upper Bound: <input type="text" name="maxupdatetime"><br>
+        </div>
 
-        <br>
-        Update Time (Range):<br>
-        Lower Bound: <input type="text" name="minupdatetime"><br>
-        Upper Bound: <input type="text" name="maxupdatetime"><br>
+        <div class="footnote">Note: Specify <code>source, type,</code> and <code>code</code> for a product detail. 
+          Include <code>updatetime</code> if you want something other than the latest product.</div>
       </fieldset>
 
       <fieldset id="spatial_info">
         <legend>Spatial Information</legend>
 
         Latitude (-90,90):
-        <input type="number" name="latitude" min="-90" max="90"><br>
+        <input type="number" name="latitude" min="-90" max="90" size="6"><br>
 
         Longitude (-180,180):
-        <input type="number" name="longitude" min="-180" max="180"><br>
+        <input type="number" name="longitude" min="-180" max="180" size="7"><br>
 
-        <br>
-        Latitude (Range):<br>
-        Lower Bound: <input type="number" name="minlatitude" min="-90" max="90"><br>
-        Upper Bound: <input type="number" name="maxlatitude" min="-90" max="90"><br>
+        <br>OR<br><br>
+        <div class="box">
+          Latitude (Range):<br>
+          Lower Bound: <input type="number" name="minlatitude" min="-90" max="90" size="6"><br>
+          Upper Bound: <input type="number" name="maxlatitude" min="-90" max="90" size="6"><br>
 
-        <br>
-        Longitude (Range):<br>
-        Lower Bound: <input type="number" name="minlongitude" min="-360" max="360"><br>
-        Upper Bound: <input type="number" name="maxlongitude" min="-360" max="360"><br>
+          <br>
+          Longitude (Range):<br>
+          Lower Bound: <input type="number" name="minlongitude" min="-360" max="360" size="7"><br>
+          Upper Bound: <input type="number" name="maxlongitude" min="-360" max="360" size="7"><br>
+        </div>
 
       </fieldset>
 
@@ -65,16 +71,19 @@
         <legend>Temporal Information</legend>
 
         Time:
-        <input type="date" name="time"><br>
+        <input type="datetime-local" name="time"><br>
 
-        <br>
-        Time (Range):<br>
-        Lower Bound: <input type="date" name="starttime"><br>
-        Upper Bound: <input type="date" name="endtime"><br>
+        OR<br>
+        <div class="box">
+          Time (Range):<br>
+          Lower Bound: <input type="datetime-local" name="starttime"><br>
+          Upper Bound: <input type="datetime-local" name="endtime"><br>
+        </div>
       </fieldset>
 
       <input class="button" type="submit" value="Execute Query">
     </form>
+    <div class="footnote">Provided by Capprin Bass</div>
 
   </body>
 
