@@ -93,6 +93,21 @@
 
       <fieldset id="other-info">
         <legend>Other</legend>
+        Order By:
+        <select name="orderby" >
+          <option selected="selected" value="time">Update Time, Descending</option>
+          <option value="time-asc">Update Time, Ascending</option>
+          <option value="id">Index ID, Descending</option>
+          <option value="id-asc">Index ID, Ascending</option>
+          <option value="magnitude">Magnitude, Descending</option>
+          <option value="magnitude-asc">Magnitude, Ascending</option>
+        </select><br>
+
+        <br>
+        Limit Results To: <input type="number" name="limit" min="0" size="3"><br>
+        Offset Results By: <input type="number" name="offset" min="0" size="3"><br>
+
+        <br>
         Include Superseded: <input type="checkbox" name="includesuperseded" value="true"><br>
         Include Deleted: <input type="checkbox" name="includedeleted" value="true"><br>
       </fieldset>
