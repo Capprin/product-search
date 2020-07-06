@@ -15,9 +15,9 @@
   <body>
     <h1>Product Query Service</h1>
     <p>This service allows for product-centric querying of ComCat using product, spatial and temporal parameters. 
-      Visit the <a href="http://localhost:9060/product.php" target="_blank">documentation</a> for more information.</p>
+      Visit the <a href="https://earthquake.usgs.gov/ws/product" target="_blank">documentation</a> for more information.</p>
 
-    <form action="http://localhost:9060/product.php" target="_blank" method="get" id="query_form">
+    <form action="https://earthquake.usgs.gov/ws/product/query" target="_blank" method="get" id="query_form">
       <fieldset id="product_info">
         <legend>Product Information</legend>
 
@@ -42,6 +42,14 @@
 
         <div class="footnote">Note: Specify <code>source, type,</code> and <code>code</code> for a product detail. 
           Include <code>updatetime</code> if you want something other than the latest product.</div>
+      </fieldset>
+
+      <fieldset id="property_info">
+        <legend>Product Properties</legend>
+
+        Magnitude (Range:)<br>
+        Lower Bound: <input type="number" name="minmagnitude" min="0" max="10" size="4"><br>
+        Upper Bound: <input type="number" name="maxmagnitude" min="0" max="10" size="4"><br>
       </fieldset>
 
       <fieldset id="spatial_info">
@@ -81,6 +89,27 @@
           Lower Bound: <input type="datetime-local" name="starttime"><br>
           Upper Bound: <input type="datetime-local" name="endtime"><br>
         </div>
+      </fieldset>
+
+      <fieldset id="other-info">
+        <legend>Other</legend>
+        Order By:
+        <select name="orderby" >
+          <option selected="selected" value="time">Update Time, Descending</option>
+          <option value="time-asc">Update Time, Ascending</option>
+          <option value="id">Index ID, Descending</option>
+          <option value="id-asc">Index ID, Ascending</option>
+          <option value="magnitude">Magnitude, Descending</option>
+          <option value="magnitude-asc">Magnitude, Ascending</option>
+        </select><br>
+
+        <br>
+        Limit Results To: <input type="number" name="limit" min="0" size="3"><br>
+        Offset Results By: <input type="number" name="offset" min="0" size="3"><br>
+
+        <br>
+        Include Superseded: <input type="checkbox" name="includesuperseded" value="true"><br>
+        Include Deleted: <input type="checkbox" name="includedeleted" value="true"><br>
       </fieldset>
 
       <input class="button" type="submit" value="Execute Query">
